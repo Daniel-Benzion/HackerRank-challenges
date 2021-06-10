@@ -3,13 +3,10 @@ import java.util.*;
 public class KaprekarNumbers {
 
     public static void kaprekarNumbers(int p, int q) {
-        // Write your code here
             
             List<String> result = new ArrayList<>();
             
             for (long i = p; i <= q; i++) {
-
-                
                 
                 if (i == 1) {
                     result.add("1");
@@ -48,10 +45,5 @@ public class KaprekarNumbers {
             }
             if (result.isEmpty()) System.out.println("INVALID RANGE");
             else for (String num : result) System.out.print(num + " ");
-        }
-    
-
-        public static void main(String[] args) {
-            kaprekarNumbers(1, 99999);
         }
 }

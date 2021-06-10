@@ -22,7 +22,7 @@ public class HalloweenSale {
                 p -= d;
                 if (p < m) p = m;
             }
-            if (s - p <= 0) break;
+            if (s - p < 0) break;
         }
         return count;
     }
