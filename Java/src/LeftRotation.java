@@ -1,21 +1,22 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class LeftRotation {
 
-	static int[] rotLeft(int[] a, int d) {
-		while (d > 0) {
-			int temp = a[0];
-			for (int i = 0; i < a.length - 1; i++) {
-				a[i] = a[i + 1];
-			}
-			a[a.length - 1] = temp;
-			d--;
-		}
-		return a;
-	}
+	public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+        int n = arr.size();
+        Integer[] array = new Integer[n];
+        for(int i = 0; i < n; i++) {
+            array[(i + n - d) % n] = arr.get(i);
+        }
+        List<Integer> result = new ArrayList<>();
+        Collections.addAll(result, array);
+        return result;
+    }
 
 	public static void main(String[] args) {
-		int[] a = {1, 2, 3, 4, 5};
-		rotLeft(a, 4);
+		Integer[] a = {1, 2, 3, 4, 5};
+		List<Integer> tester = Arrays.asList(a);
+		System.out.println(tester);
+		System.out.println(rotateLeft(1, tester));
 	}
 }
